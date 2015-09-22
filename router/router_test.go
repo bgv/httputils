@@ -51,7 +51,7 @@ func TestRouter(t *testing.T) {
 	router.Patch("/PATCH", func(w http.ResponseWriter, r *http.Request) {
 		patch = true
 	})
-	router.Delete("/DELETE", func(w http.ResponseWriter, r *http.Request) {
+	router.Del("/DELETE", func(w http.ResponseWriter, r *http.Request) {
 		delete = true
 	})
 
@@ -123,7 +123,7 @@ func TestRouterWithPrefix(t *testing.T) {
 	router.Patch("/PATCH", func(w http.ResponseWriter, r *http.Request) {
 		patch = true
 	})
-	router.Delete("/DELETE", func(w http.ResponseWriter, r *http.Request) {
+	router.Del("/DELETE", func(w http.ResponseWriter, r *http.Request) {
 		delete = true
 	})
 

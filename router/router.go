@@ -67,8 +67,8 @@ func (r *Router) WithPrefix(prefix string) *Router {
 
 // Map all supported httprouter methods
 
-// Delete registers a new DELETE route.
-func (r *Router) Delete(path string, h http.HandlerFunc) {
+// Del registers a new DELETE route.
+func (r *Router) Del(path string, h http.HandlerFunc) {
 	r.rtr.DELETE(r.prefix+path, handle(h))
 }
 
