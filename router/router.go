@@ -109,11 +109,11 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 // FileServe returns a new http.HandlerFunc that serves files from dir.
 // Using routes must provide the *filepath parameter.
-func FileServe(dir string) http.HandlerFunc {
+func (r *Router) FileServe(dir string) http.HandlerFunc {
 	fs := http.FileServer(http.Dir(dir))
 
-	return func(w http.ResponseWriter, r *http.Request) {
-		r.URL.Path = Param(Context(r), "filepath")
-		fs.ServeHTTP(w, r)
+	return func(w http.ResponseWriter, req *http.Request) {
+		req.URL.Path = Param(Context(req), "filepath")
+		fs.ServeHTTP(w, req)
 	}
 }
