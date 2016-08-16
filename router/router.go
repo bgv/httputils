@@ -1,11 +1,11 @@
 package router
 
 import (
+	"context"
 	"net/http"
 	"sync"
 
 	"github.com/julienschmidt/httprouter"
-	"golang.org/x/net/context"
 )
 
 var (
